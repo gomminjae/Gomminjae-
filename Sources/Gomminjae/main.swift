@@ -7,6 +7,8 @@ struct Gomminjae: Website {
     enum SectionID: String, WebsiteSectionID {
         // Add the sections that you want your website to contain here:
         case posts
+        case about
+        
     }
 
     struct ItemMetadata: WebsiteItemMetadata {
