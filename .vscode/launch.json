@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Gomminjae",
+            "program": "${workspaceFolder:Gomminjae}/.build/debug/Gomminjae",
+            "args": [],
+            "cwd": "${workspaceFolder:Gomminjae}",
+            "preLaunchTask": "swift: Build Debug Gomminjae"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Release Gomminjae",
+            "program": "${workspaceFolder:Gomminjae}/.build/release/Gomminjae",
+            "args": [],
+            "cwd": "${workspaceFolder:Gomminjae}",
+            "preLaunchTask": "swift: Build Release Gomminjae"
+        }
+    ]
+}
