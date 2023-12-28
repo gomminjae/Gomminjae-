@@ -16,7 +16,7 @@ struct Gomminjae: Website {
     }
 
     // Update these properties to configure your website:
-    var url = URL(string: "https://your-website-url.com")!
+    var url = URL(string: "https://gomminjae/gomminjae.github.io")!
     var name = "Gomminjae"
     var description = "A description of Gomminjae"
     var language: Language { .english }
