@@ -17,6 +17,9 @@ jobs:
         uses: apple/setup-swift@latest
         with:
           swift-version: '5.5' # Swift 버전에 맞게 설정
+      
+      - name: Spm Install 
+        run: swift package manager tools-update 
 
       - name: Publish Deploy
         run: |
