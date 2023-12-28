@@ -1,4 +1,4 @@
-name: Deploy on Push
+name: Swift Publish Deployment
 
 on:
   push:
@@ -13,13 +13,16 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Set up Swift
+        uses: actions/setup-swift@v2
         with:
-          node-version: '14'
+          swift-version: '5.5' # Swift 버전에 맞게 설정
 
       - name: Install Dependencies
-        run: npm install
+        run: swift package resolve
 
-      - name: Publish and Deploy
-        run: npm run publish deploy
+      - name: Build and Deploy
+        run: |
+          swift build -c release
+          publish deploy
+
