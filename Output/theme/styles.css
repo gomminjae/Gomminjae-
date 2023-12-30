@@ -151,9 +151,6 @@ footer {
         background-color: #333;
     }
 
-    header {
-        background-color: #237563;
-    }
 }
 
 @media(max-width: 600px) {
