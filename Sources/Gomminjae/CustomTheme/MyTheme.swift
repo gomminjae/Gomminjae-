@@ -14,7 +14,7 @@ extension Theme where Site == Gomminjae {
     static var myTheme: Self {
         Theme(
             htmlFactory: MyHTMLFactory(),
-            resourcePaths: ["Resources/theme/styles.css"]
+            resourcePaths: ["Resources/theme/styles.css",]
         )
     }
 }
