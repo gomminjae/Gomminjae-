@@ -9,7 +9,7 @@ try Gomminjae()
         .installPlugin(.splash(withClassPrefix: "")),
         .addMarkdownFiles(),
         .copyResources(),
-        .generateHTML(withTheme: .foundation),
+        .generateHTML(withTheme: .myTheme),
         .generateSiteMap(),
         .deploy(using: .gitHub("gomminjae/gomminjae.github.io",
                                branch: "main",
