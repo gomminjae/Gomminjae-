@@ -165,17 +165,24 @@ private struct Wrapper: ComponentContainer {
 private struct SiteHeader<Site: Website>: Component {
     var context: PublishingContext<Site>
     var selectedSelectionID: Site.SectionID?
+    
+    
 
     var body: Component {
         Header {
-            Wrapper {
+            Div {
                 Link(context.site.name, url: "/")
                     .class("site-name")
+                
+                Banner(title: "Gomminjae", subTitle: "Hello", bannerImage: "hello")
+                
+                
 
                 if Site.SectionID.allCases.count > 1 {
                     navigation
                 }
             }
+            .class("wrapper")
         }
     }
 

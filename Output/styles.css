@@ -20,7 +20,7 @@ body {
 }
 
 header {
-    background-color: #237563;
+    background-color: #000;
 }
 
 header .wrapper {
@@ -42,15 +42,28 @@ header .site-name {
 nav {
     margin-top: 20px;
 }
-
 nav li {
     display: inline-block;
     margin: 0 7px;
-    line-height: 1.5em;
+    line-height: 20px;
+    font-size: 20px;
+}
+
+nav li a {
+/*    display: inline-block;*/
+/*    margin: 0 7px;*/
+/*    line-height: 1.5em;*/
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
 nav li a.selected {
-    text-decoration: underline;
+    background-color: #237563;
+    color: white;
+/*    text-decoration: underline;*/
 }
 
 h1 {
