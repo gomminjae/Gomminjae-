@@ -96,6 +96,10 @@ a {
     color: inherit;
 }
 
+.item-list h1 a:hover {
+    color: #237563;
+}
+
 .description {
     margin-bottom: 40px;
 }
