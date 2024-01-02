@@ -9,6 +9,7 @@ import Foundation
 import Publish
 import Plot
 
+
 extension Theme where Site == Gomminjae {
     
     static var myTheme: Self {
@@ -65,7 +66,8 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
 
     func makeItemHTML(for item: Item<Site>,
                       context: PublishingContext<Site>) throws -> HTML {
-        HTML(
+        
+        return HTML(
             .lang(context.site.language),
             .head(for: item, on: context.site),
             .body(
@@ -84,6 +86,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
             )
         )
     }
+
 
     func makePageHTML(for page: Page,
                       context: PublishingContext<Site>) throws -> HTML {
@@ -113,7 +116,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
                                  url: context.site.path(for: tag).absoluteString
                             )
                         }
-                        .class("tag")
+                        .class("tag-\(tag.string)")
                     }
                     .class("all-tags")
                 }
@@ -174,7 +177,7 @@ private struct SiteHeader<Site: Website>: Component {
 //                Link(context.site.name, url: "/")
 //                    .class("site-name")
                 
-                Banner(title: "Gomminjae", subTitle: "Hello", bannerImage: "hello")
+                Banner(title: "Gomminjae", subTitle: "Hello", bannerImage: "Resources/images/space.jpg")
                 
                 
 

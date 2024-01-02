@@ -38,12 +38,18 @@ header .site-name {
 /*    color: #000;*/
     font-weight: bold;
 }
+.banner-image {
+    width: 600px;
+    max-width: 80%;
+    margin-bottom: 6px;
+}
 .banner-title {
     font-size: 50px;
 }
 .banner-subTitle {
     font-size: 25px;
 }
+
 
 nav {
     margin-top: 30px;
@@ -130,14 +136,15 @@ a {
 }
 
 .tag-list li,
-.tag {
+.tag-first {
     display: inline-block;
-    background-color: #000;
+    background-color: red;
     color: #ddd;
     padding: 4px 6px;
     border-radius: 5px;
     margin-right: 5px;
 }
+
 
 .tag-list a,
 .tag a {

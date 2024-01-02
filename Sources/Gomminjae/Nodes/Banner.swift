@@ -14,12 +14,12 @@ struct Banner: Component {
     var title: String
     var subTitle: String
     
-    var bannerImage: String
+    var bannerImage: String = "/Resources/images/space.jpg"
     
     var body: Component {
         Div {
             
-            Image(url: bannerImage, description: "베너 이미지")
+            Image(url: bannerImage, description: "배너이미지")
                 .class("banner-image")
             
             Text(title)

@@ -7,7 +7,8 @@
 import Foundation
 import Publish
 import Plot
-import SplashPublishPlugin
+
+
 
 
 struct Gomminjae: Website {
@@ -16,7 +17,6 @@ struct Gomminjae: Website {
         case posts
         case portfolio
         case about
-        
     }
 
     struct ItemMetadata: WebsiteItemMetadata {
