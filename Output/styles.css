@@ -20,7 +20,7 @@ body {
 }
 
 header {
-    background-color: #000;
+    background-image: linear-gradient(#0E141B, #1C262E);
 }
 
 header .wrapper {
@@ -35,18 +35,29 @@ header a {
 
 header .site-name {
     font-size: 1.5em;
-    color: #000;
+/*    color: #000;*/
     font-weight: bold;
+}
+.banner-title {
+    font-size: 50px;
+}
+.banner-subTitle {
+    font-size: 25px;
 }
 
 nav {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 nav li {
     display: inline-block;
     margin: 0 7px;
     line-height: 20px;
     font-size: 20px;
+}
+
+nav a:hover {
+    background-color: #237563;
+    color: white;
 }
 
 nav li a {
@@ -60,11 +71,13 @@ nav li a {
     border-radius: 5px;
 }
 
+
 nav li a.selected {
     background-color: #237563;
     color: white;
 /*    text-decoration: underline;*/
 }
+
 
 h1 {
     margin-bottom: 20px;

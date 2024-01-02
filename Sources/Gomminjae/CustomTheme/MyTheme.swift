@@ -170,9 +170,9 @@ private struct SiteHeader<Site: Website>: Component {
 
     var body: Component {
         Header {
-            Div {
-                Link(context.site.name, url: "/")
-                    .class("site-name")
+            Wrapper {
+//                Link(context.site.name, url: "/")
+//                    .class("site-name")
                 
                 Banner(title: "Gomminjae", subTitle: "Hello", bannerImage: "hello")
                 
@@ -182,7 +182,6 @@ private struct SiteHeader<Site: Website>: Component {
                     navigation
                 }
             }
-            .class("wrapper")
         }
     }
 
