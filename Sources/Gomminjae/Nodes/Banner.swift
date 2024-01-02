@@ -14,19 +14,26 @@ struct Banner: Component {
     var title: String
     var subTitle: String
     
-    var bannerImage: String = "/Resources/images/space.jpg"
+    var bannerImage: String
     
     var body: Component {
         Div {
             
-            Image(url: bannerImage, description: "배너이미지")
-                .class("banner-image")
             
-            Text(title)
-                .class("banner-title")
+            Link(url: "/") {
+                Image(url: bannerImage, description: "배너이미지")
+                    .class("banner-image")
+            }
+            Paragraph {
+                Text(title)
+                    .class("banner-title")
+                
+            }
             
-            Text(subTitle)
-                .class("banner-subTitle")
+            Paragraph {
+                Text(subTitle)
+                    .class("banner-subtitle")
+            }
             
             
         }
