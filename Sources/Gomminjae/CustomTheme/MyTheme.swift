@@ -34,7 +34,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
 //                    H1(index.title)
 //                    Paragraph(context.site.description)
 //                        .class("description")
-                    H1("Latest content")
+                    H1("Recent Posts")
                     ItemList(
                         items: context.allItems(
                             sortedBy: \.date,
@@ -180,7 +180,6 @@ private struct SiteHeader<Site: Website>: Component {
                 Banner(title: "Gomminjae", subTitle: "Hello", bannerImage: "/images/logo.png")
                 
                 
-
                 if Site.SectionID.allCases.count > 1 {
                     navigation
                 }

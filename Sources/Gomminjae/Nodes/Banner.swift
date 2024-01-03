@@ -22,18 +22,18 @@ struct Banner: Component {
             
             Link(url: "/") {
                 Image(url: bannerImage, description: "배너이미지")
-                    .class("banner-image")
+                .class("banner-image")
             }
             Paragraph {
                 Text(title)
-                    .class("banner-title")
+                    
                 
-            }
+            }.class("banner-title")
             
             Paragraph {
                 Text(subTitle)
-                    .class("banner-subtitle")
-            }
+                    
+            }.class("banner-subtitle")
             
             
         }
