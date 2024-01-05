@@ -20,10 +20,10 @@ struct Banner: Component {
         Div {
             
             
-            Link(url: "/") {
-                Image(url: bannerImage, description: "배너이미지")
-                .class("banner-image")
-            }
+//            Link(url: "/") {
+//                Image(url: bannerImage, description: "배너이미지")
+//                .class("banner-image")
+//            }
             Paragraph {
                 Text(title)
                     

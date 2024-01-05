@@ -5,7 +5,7 @@
 }
 
 body {
-    background: #0E141B;
+    background-color: #222;
     color: #000;
     font-family: Helvetica, Arial;
     text-align: center;
@@ -20,8 +20,9 @@ body {
 }
 
 header {
-    background-image: linear-gradient(#0E141B, #1C262E);
-/*      background-image: linear-gradient(#000000, #001f3f);*/
+/*    background-image: linear-gradient(#0E141B, #1C262E);*/
+/*    background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);*/
+    background-image: linear-gradient( 109.6deg,  rgba(61,131,97,1) 11.2%, rgba(28,103,88,1) 91.1% );
 
 }
 
@@ -40,6 +41,9 @@ header .site-name {
 /*    color: #000;*/
     font-weight: bold;
 }
+
+
+
 header .banner-image {
     max-width: 80%;
     margin-bottom: 6px;
@@ -163,8 +167,7 @@ a {
     display: block;
     padding: 20px;
     border-radius: 20px;
-/*    background-color: #eee;*/
-    background-image: linear-gradient(#0E141B, #1C262E);
+    background-color: #eee;
     margin-bottom: 20px;
 }
 
@@ -227,7 +230,7 @@ footer {
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #0E141B;
+        background-color: #eee;
     }
 
     body,
@@ -250,5 +253,21 @@ footer {
 img {
     overflow-clip-margin: content-box;
     overflow: clip;
+}
+
+
+/*Tag Colors*/
+.swift-tag {
+    background-color: #f26d50;
+}
+.xcode-tag {
+    background-color: #0080ff;
+}
+
+.swiftUI-tag {
+    background-color: #ff0080;
+}
+.ci/cd-tag {
+    background-color: #008040;
 }
 

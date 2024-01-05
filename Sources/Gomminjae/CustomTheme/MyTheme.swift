@@ -18,6 +18,7 @@ extension Theme where Site == Gomminjae {
             resourcePaths: ["Resources/theme/styles.css",]
         )
     }
+    
 }
 
 
@@ -177,13 +178,14 @@ private struct SiteHeader<Site: Website>: Component {
 //                Link(context.site.name, url: "/")
 //                    .class("site-name")
                 
-                Banner(title: "Gomminjae", subTitle: "Always 1.0.0", bannerImage: "/images/logo.png")
+                Banner(title: "Gomminjae", subTitle: "let alwaysKeepBeginnerMind = true", bannerImage: "/images/logo.png")
                 
                 
                 if Site.SectionID.allCases.count > 1 {
                     navigation
                 }
             }
+            //.class("header-background")
         }
     }
 
@@ -236,7 +238,7 @@ private struct SiteFooter: Component {
     var body: Component {
         Footer {
             Paragraph {
-                Text("Generated using ")
+                Text("Copyright © Minjae. All Rights Reserved.\n Built in Swift using ")
                 Link("Publish", url: "https://github.com/johnsundell/publish")
             }
             Paragraph {
@@ -245,3 +247,5 @@ private struct SiteFooter: Component {
         }
     }
 }
+                                             
+                                                   
