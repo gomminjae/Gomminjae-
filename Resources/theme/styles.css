@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #222;
+    background-color: black;
     color: #000;
     font-family: Helvetica, Arial;
     text-align: center;
@@ -149,6 +149,9 @@ p {
 a {
     color: inherit;
 }
+.item-list {
+    background-color: black;
+}
 
 .item-list h1 a:hover {
     color: #237563;
@@ -230,7 +233,7 @@ footer {
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #eee;
+        background-color: black;
     }
 
     body,
