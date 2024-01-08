@@ -6,3 +6,11 @@ tags: CI/CD
 # First CI/CD 
 
 My first post's text.
+
+```
+import UIKit 
+
+let hello = print("Hello world!")
+```
+
+

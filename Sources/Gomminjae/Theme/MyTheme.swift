@@ -24,6 +24,8 @@ extension Theme where Site == Gomminjae {
 
 struct MyHTMLFactory<Site: Website>: HTMLFactory {
     
+    
+    //웹사이트 메인 화면
     func makeIndexHTML(for index: Index,
                        context: PublishingContext<Site>) throws -> HTML {
         HTML(
@@ -49,6 +51,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
         )
     }
 
+    //웹사이트 Section 부분에 부분에 사용할 index.html
     func makeSectionHTML(for section: Section<Site>,
                          context: PublishingContext<Site>) throws -> HTML {
         HTML(
@@ -65,6 +68,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
         )
     }
 
+    //웹사이트 item에 사용할
     func makeItemHTML(for item: Item<Site>,
                       context: PublishingContext<Site>) throws -> HTML {
         
@@ -89,6 +93,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
     }
 
 
+    //웹사이트 page에 사용할 html
     func makePageHTML(for page: Page,
                       context: PublishingContext<Site>) throws -> HTML {
         HTML(
@@ -102,6 +107,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
         )
     }
 
+    //tag 전체 리스트를 제공
     func makeTagListHTML(for page: TagListPage,
                          context: PublishingContext<Site>) throws -> HTML? {
         HTML(
@@ -126,6 +132,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
         )
     }
 
+    //tag 상세 내용을 제공
     func makeTagDetailsHTML(for page: TagDetailsPage,
                             context: PublishingContext<Site>) throws -> HTML? {
         HTML(
@@ -158,6 +165,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
         )
     }
 }
+
 private struct Wrapper: ComponentContainer {
     @ComponentBuilder var content: ContentProvider
 

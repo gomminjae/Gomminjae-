@@ -2,6 +2,8 @@ import Foundation
 import Publish
 import Plot
 import SplashPublishPlugin
+import Splash
+
 
 // This will generate your website using the built-in Foundation theme:
 try Gomminjae()
