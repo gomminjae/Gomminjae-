@@ -19,6 +19,15 @@ struct Gomminjae: Website {
         case posts
         case portfolio
         case about
+        
+        var name: String {
+            switch self {
+            case .posts: return "Posts"
+            case .about: return "About"
+            case .portfolio: return "Portfolio"
+                
+            }
+        }
     }
 
     //웹사이트 메타데이터 
