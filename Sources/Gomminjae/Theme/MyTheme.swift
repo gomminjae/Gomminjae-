@@ -237,8 +237,14 @@ private struct ItemTagList<Site: Website>: Component {
     var body: Component {
         List(item.tags) { tag in
             Link(tag.string, url: site.path(for: tag).absoluteString)
+                .class(tagClass(for: tag))
         }
         .class("tag-list")
+    }
+    
+    private func tagClass(for tag: Tag) -> String {
+        var tagString = tag.string
+        return "\(tagString)-tag"
     }
 }
 

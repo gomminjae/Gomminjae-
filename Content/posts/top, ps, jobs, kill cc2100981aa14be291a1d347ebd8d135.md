@@ -1,7 +1,7 @@
 ---
 date: 2023-12-26 15:04
 description: A description of my second post.
-tags: Linux
+tags: swift,swiftUI
 ---
 # top, ps, jobs, kill
 

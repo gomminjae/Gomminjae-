@@ -195,11 +195,11 @@ a {
 .tag-list li,
 .tag-first {
     display: inline-block;
-    background-color: red;
+/*    background-color: red;*/
     color: #ddd;
     padding: 4px 6px;
     border-radius: 5px;
-    margin-right: 5px;
+    margin-right: 3px;
 }
 
 
@@ -262,15 +262,35 @@ img {
 /*Tag Colors*/
 .swift-tag {
     background-color: #f26d50;
+    display: inline-block;
+    color: #ddd;
+    padding: 4px 6px;
+    border-radius: 5px;
+    margin-right: 5px;
 }
 .xcode-tag {
     background-color: #0080ff;
+    display: inline-block;
+    color: #ddd;
+    padding: 4px 6px;
+    border-radius: 5px;
+    margin-right: 5px;
 }
 
 .swiftUI-tag {
     background-color: #ff0080;
+    display: inline-block;
+    color: #ddd;
+    padding: 4px 6px;
+    border-radius: 5px;
+    margin-right: 5px;
 }
-.ci/cd-tag {
-    background-color: #008040;
+.CI/CD-tag {
+    background-color: red;
+    display: inline-block;
+    color: #ddd;
+    padding: 4px 6px;
+    border-radius: 5px;
+    margin-right: 5px;
 }
 
