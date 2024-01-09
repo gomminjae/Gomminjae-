@@ -1,7 +1,7 @@
 ---
 date: 2023-12-26 15:04
 description: A description of my second post.
-tags: swift,swiftUI
+tags: swift,swiftUI,deploy
 ---
 # top, ps, jobs, kill
 

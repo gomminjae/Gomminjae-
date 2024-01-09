@@ -186,7 +186,7 @@ private struct SiteHeader<Site: Website>: Component {
 //                Link(context.site.name, url: "/")
 //                    .class("site-name")
                 
-                Banner(title: "Gomminjae", subTitle: "let alwaysKeepBeginnerMind = true", bannerImage: "/images/logo.png")
+                Banner(title: "Gomminjae", subTitle: "메끼끼", bannerImage: "/images/logo.png")
                 
                 
                 if Site.SectionID.allCases.count > 1 {
@@ -221,6 +221,8 @@ private struct ItemList<Site: Website>: Component {
                 H1(Link(item.title, url: item.path.absoluteString))
                 Paragraph {
                 }.class("small-divider")
+                
+                Paragraph(item.date.toString()).class("item-metadata")
                 
                 ItemTagList(item: item, site: site)
                 Paragraph(item.description)

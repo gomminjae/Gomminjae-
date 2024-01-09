@@ -1,3 +1,66 @@
+
+
+/*코드블럭*/
+pre {
+  margin-bottom: 22px;
+  background-color: #151F28;
+  padding: 16px 0;
+  border-radius: 16px;
+}
+
+pre code {
+  font-family: Code, monospace;
+  display: block;
+  padding: 0 20px;
+  color: #EEF1F3;
+  line-height: 22px;
+  font-size: 17px;
+  overflow-x: auto;
+  white-space: pre;
+  -webkit-overflow-scrolling: touch;
+}
+
+pre code .keyword {
+  color: #FF39A8;
+}
+
+pre code .type {
+  color: #8D65E5;
+}
+
+pre code .call {
+  color: #2B89FF;
+}
+
+pre code .property {
+  color: #00C999;
+}
+
+pre code .number {
+  color: #DB6F57;
+}
+
+pre code .string {
+  color: #DB6F57;
+}
+
+pre code .comment {
+  color: #6C8998;
+}
+
+pre code .dotAccess {
+  color: #92B300;
+}
+
+pre code .preprocessing {
+  color: #B68A00;
+}
+/*코드블럭*/
+
+
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -156,6 +219,11 @@ a {
 .item-list h1 a:hover {
     color: #237563;
 }
+
+.item-metadata {
+  color: #6C7693;
+}
+
 .small-divider {
     border: 2px solid #237563;
     border-style: none none solid none;
@@ -166,12 +234,16 @@ a {
     margin-bottom: 40px;
 }
 
+
 .item-list > li {
     display: block;
     padding: 20px;
     border-radius: 20px;
     background-color: #eee;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+}
+.item-list a:link {
+    text-decoration: none;
 }
 
 .item-list > li:last-child {
@@ -188,26 +260,47 @@ a {
     line-height: 1.6;
 }
 
-.tag-list {
-    margin-bottom: 15px;
-}
-
 .tag-list li,
-.tag-first {
-    display: inline-block;
-/*    background-color: red;*/
-    color: #ddd;
-    padding: 4px 6px;
-    border-radius: 5px;
-    margin-right: 3px;
+.tag {
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 10px;
 }
-
 
 .tag-list a,
-.tag a {
-    text-decoration: none;
+.tag a,
+.tag {
+  text-decoration: none;
+  padding: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 6px;
+  font-weight: 300;
+  color: #FFF;
 }
 
+.tag-list li:last-child {
+  margin-right: 20px;
+}
+
+.item-page .tag-list {
+  display: inline-block;
+}
+
+.content {
+  margin-bottom: 40px;
+}
+
+.browse-all {
+  display: block;
+  margin-bottom: 30px;
+}
+
+.all-tags ul {
+  font-size: 22px;
+  margin-right: 10px;
+  padding: 6px 10px;
+}
 .item-page .tag-list {
     display: inline-block;
 }
@@ -262,35 +355,17 @@ img {
 /*Tag Colors*/
 .swift-tag {
     background-color: #f26d50;
-    display: inline-block;
-    color: #ddd;
-    padding: 4px 6px;
-    border-radius: 5px;
-    margin-right: 5px;
 }
 .xcode-tag {
     background-color: #0080ff;
-    display: inline-block;
-    color: #ddd;
-    padding: 4px 6px;
-    border-radius: 5px;
-    margin-right: 5px;
 }
 
 .swiftUI-tag {
     background-color: #ff0080;
-    display: inline-block;
-    color: #ddd;
-    padding: 4px 6px;
-    border-radius: 5px;
-    margin-right: 5px;
+    
 }
-.CI/CD-tag {
-    background-color: red;
-    display: inline-block;
-    color: #ddd;
-    padding: 4px 6px;
-    border-radius: 5px;
-    margin-right: 5px;
+.deploy-tag {
+    background-color: #008040;
+   
 }
 
