@@ -1,60 +1,134 @@
+.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    color: #abb2bf;
+    background: #282c34;
+}
 
+.hljs-comment,
+.hljs-quote {
+    color: #5c6370;
+    font-style: italic;
+}
 
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+    color: #c678dd;
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+    color: #e06c75;
+}
+
+.hljs-literal {
+    color: #56b6c2;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+    color: #98c379;
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+    color: #e6c07b;
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+    color: #d19a66;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+    color: #61aeee;
+}
+
+.hljs-emphasis {
+    font-style: italic;
+}
+
+.hljs-strong {
+    font-weight: bold;
+}
+
+.hljs-link {
+    text-decoration: underline;
+}
 /*코드블럭*/
-pre {
-  margin-bottom: 22px;
-  background-color: #151F28;
-  padding: 16px 0;
-  border-radius: 16px;
-}
-
-pre code {
-  font-family: Code, monospace;
-  display: block;
-  padding: 0 20px;
-  color: #EEF1F3;
-  line-height: 22px;
-  font-size: 17px;
-  overflow-x: auto;
-  white-space: pre;
-  -webkit-overflow-scrolling: touch;
-}
-
-pre code .keyword {
-  color: #FF39A8;
-}
-
-pre code .type {
-  color: #8D65E5;
-}
-
-pre code .call {
-  color: #2B89FF;
-}
-
-pre code .property {
-  color: #00C999;
-}
-
-pre code .number {
-  color: #DB6F57;
-}
-
-pre code .string {
-  color: #DB6F57;
-}
-
-pre code .comment {
-  color: #6C8998;
-}
-
-pre code .dotAccess {
-  color: #92B300;
-}
-
-pre code .preprocessing {
-  color: #B68A00;
-}
+/*pre {*/
+/*  margin-bottom: 22px;*/
+/*  background-color: #151F28;*/
+/*  padding: 16px 0;*/
+/*  border-radius: 16px;*/
+/*}*/
+/**/
+/*pre code {*/
+/*  font-family: Code, monospace;*/
+/*  display: block;*/
+/*  padding: 0 20px;*/
+/*  color: #EEF1F3;*/
+/*  line-height: 22px;*/
+/*  font-size: 17px;*/
+/*  overflow-x: auto;*/
+/*  white-space: pre;*/
+/*  -webkit-overflow-scrolling: touch;*/
+/*}*/
+/**/
+/*pre code .keyword {*/
+/*  color: #FF39A8;*/
+/*}*/
+/**/
+/*pre code .type {*/
+/*  color: #8D65E5;*/
+/*}*/
+/**/
+/*pre code .call {*/
+/*  color: #2B89FF;*/
+/*}*/
+/**/
+/*pre code .property {*/
+/*  color: #00C999;*/
+/*}*/
+/**/
+/*pre code .number {*/
+/*  color: #DB6F57;*/
+/*}*/
+/**/
+/*pre code .string {*/
+/*  color: #DB6F57;*/
+/*}*/
+/**/
+/*pre code .comment {*/
+/*  color: #6C8998;*/
+/*}*/
+/**/
+/*pre code .dotAccess {*/
+/*  color: #92B300;*/
+/*}*/
+/**/
+/*pre code .preprocessing {*/
+/*  color: #B68A00;*/
+/*}*/
 /*코드블럭*/
 
 

@@ -3,12 +3,15 @@ import Publish
 import Plot
 import SplashPublishPlugin
 import Splash
+import HighlightJSPublishPlugin
+
 
 
 // This will generate your website using the built-in Foundation theme:
 try Gomminjae()
     .publish(using: [
-        .installPlugin(.splash(withClassPrefix: "")),
+        //.installPlugin(.splash(withClassPrefix: "")),
+        .installPlugin(.highlightJS()),
         .addMarkdownFiles(),
         .copyResources(),
         .generateHTML(withTheme: .myTheme),

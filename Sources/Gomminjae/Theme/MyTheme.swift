@@ -9,7 +9,6 @@ import Foundation
 import Publish
 import Plot
 
-
 extension Theme where Site == Gomminjae {
     
     static var myTheme: Self {

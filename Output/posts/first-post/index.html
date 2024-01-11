@@ -1,86 +1,89 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta property="og:site_name" content="Gomminjae"/><link rel="canonical" href="https://gomminjae/gomminjae.github.io/posts/first-post"/><meta name="twitter:url" content="https://gomminjae/gomminjae.github.io/posts/first-post"/><meta property="og:url" content="https://gomminjae/gomminjae.github.io/posts/first-post"/><title>First CI/CD | Gomminjae</title><meta name="twitter:title" content="First CI/CD | Gomminjae"/><meta property="og:title" content="First CI/CD | Gomminjae"/><meta name="description" content="A description of my first post."/><meta name="twitter:description" content="A description of my first post."/><meta property="og:description" content="A description of my first post."/><meta name="twitter:card" content="summary"/><link rel="stylesheet" href="/styles.css" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/images/favicon.png" type="image/png"/><link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to Gomminjae"/></head><body class="item-page"><header><div class="wrapper"><div><p class="banner-title">Gomminjae</p><p class="banner-subtitle">메끼끼</p></div><nav><ul><li><a href="/posts" class="selected">Posts</a></li><li><a href="/portfolio">Portfolio</a></li><li><a href="/about">About</a></li></ul></nav></div></header><div class="wrapper"><article><div class="content"><h1>First CI/CD</h1><p>My first post's text.</p><pre><code><span class="keyword">private struct</span> ItemTagList&lt;Site: <span class="type">Website</span>&gt;: <span class="type">Component</span> {
-    <span class="keyword">var</span> item: <span class="type">Item</span>&lt;<span class="type">Site</span>&gt;
-    <span class="keyword">var</span> site: <span class="type">Site</span>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta property="og:site_name" content="Gomminjae"/><link rel="canonical" href="https://gomminjae/gomminjae.github.io/posts/first-post"/><meta name="twitter:url" content="https://gomminjae/gomminjae.github.io/posts/first-post"/><meta property="og:url" content="https://gomminjae/gomminjae.github.io/posts/first-post"/><title>First CI/CD | Gomminjae</title><meta name="twitter:title" content="First CI/CD | Gomminjae"/><meta property="og:title" content="First CI/CD | Gomminjae"/><meta name="description" content="A description of my first post."/><meta name="twitter:description" content="A description of my first post."/><meta property="og:description" content="A description of my first post."/><meta name="twitter:card" content="summary"/><link rel="stylesheet" href="/styles.css" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/images/favicon.png" type="image/png"/><link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to Gomminjae"/></head><body class="item-page"><header><div class="wrapper"><div><p class="banner-title">Gomminjae</p><p class="banner-subtitle">메끼끼</p></div><nav><ul><li><a href="/posts" class="selected">Posts</a></li><li><a href="/portfolio">Portfolio</a></li><li><a href="/about">About</a></li></ul></nav></div></header><div class="wrapper"><article><div class="content"><h1>First CI/CD</h1><p>My first post's text.</p><pre data-language="undefined" class="hljs"><code>
+private struct ItemTagList<Site: Website>: Component {
+    var item: Item<Site>
+    var site: Site
 
-    <span class="keyword">var</span> body: <span class="type">Component</span> {
-        <span class="type">List</span>(item.<span class="property">tags</span>) { tag <span class="keyword">in</span>
-            <span class="type">Link</span>(tag.<span class="property">string</span>, url: site.<span class="call">path</span>(for: tag).<span class="property">absoluteString</span>)
-                .<span class="call">class</span>(<span class="call">tagClass</span>(for: tag))
+    var body: Component {
+        List(item.tags) { tag in
+            Link(tag.string, url: site.path(for: tag).absoluteString)
+                .class(tagClass(for: tag))
         }
-        .<span class="call">class</span>(<span class="string">"tag-list"</span>)
+        .class("tag-list")
     }
     
-    <span class="keyword">private func</span> tagClass(for tag: <span class="type">Tag</span>) -&gt; <span class="type">String</span> {
-        <span class="keyword">var</span> tagString = tag.<span class="property">string</span>
-        <span class="keyword">return</span> <span class="string">"</span>\(tagString)<span class="string">-tag"</span>
+    private func tagClass(for tag: Tag) -> String {
+        var tagString = tag.string
+        return "\(tagString)-tag"
     }
 }
-</code></pre><h1>C</h1><pre><code><span class="call">printf</span>(<span class="string">"Hello world !\n"</span>);
-<span class="call">printf</span>(<span class="string">"code Block \n"</span>);
-</code></pre><h1>Python</h1><pre><code>from db.<span class="property">connection</span> <span class="keyword">import</span> connection
+</code></pre><h1>C</h1><pre data-language="undefined" class="hljs"><code>
+printf("Hello world !\n");
+printf("code Block \n");
+</code></pre><h1>Python</h1><pre data-language="undefined" class="hljs"><code>
+from db.connection import connection
 
 
 # 리뷰 저장
-def <span class="call">add_review</span>(data):
-    # <span class="number">1</span>.<span class="type">Connection</span>
-    conn = <span class="call">connection</span>()
+def add_review(data):
+    # 1.Connection
+    conn = connection()
 
     try:
-        # <span class="number">2</span>.<span class="property">일꾼</span> 생성
-        curs = conn.<span class="call">cursor</span>()
-        # <span class="number">3</span>.<span class="type">JOB</span> <span class="call">생성</span>(<span class="type">SQL</span>) → <span class="type">INSERT</span>, <span class="type">DELETE</span>, <span class="type">UPDATE</span>, <span class="type">SELECT</span>
-        sql = <span class="string">"""
+        # 2.일꾼 생성
+        curs = conn.cursor()
+        # 3.JOB 생성(SQL) → INSERT, DELETE, UPDATE, SELECT
+        sql = """
                 INSERT INTO tbl_review(title, review, score, writer, reg_date)
                 VALUES(%(title)s, %(review)s, %(score)s, %(writer)s, %(reg_date)s)
-              """</span>
-        # <span class="number">4</span>.<span class="property">작업</span> 시작
-        curs.<span class="call">execute</span>(sql, data)
-    except <span class="type">Exception</span> <span class="keyword">as</span> e:
-        <span class="call">print</span>(e)
+              """
+        # 4.작업 시작
+        curs.execute(sql, data)
+    except Exception as e:
+        print(e)
     finally:
-        # <span class="number">5</span>.<span class="property">자원</span> 해제
-        conn.<span class="call">close</span>()
+        # 5.자원 해제
+        conn.close()
 
 
-def <span class="call">get_last_review</span>():
-    conn = <span class="call">connection</span>()
+def get_last_review():
+    conn = connection()
 
     try:
-        curs = conn.<span class="call">cursor</span>()
-        sql = <span class="string">"""
+        curs = conn.cursor()
+        sql = """
                 SELECT *
                 FROM (
                     SELECT DATE_FORMAT(STR_TO_DATE(reg_date, '%Y. %m. %d. %H:%i'), '%Y%m%d%H%i') AS int_regdate FROM tbl_review
                     ORDER BY reg_date
                 ) EX1
                 ORDER BY int_regdate DESC LIMIT 1;
-              """</span>
-        curs.<span class="call">execute</span>(sql)
-        # <span class="type">INSERT</span>, <span class="type">DELETE</span>, <span class="type">UPDATE</span> → <span class="call">동작</span>(<span class="type">Check</span>)
-        # <span class="type">SELECT</span> → <span class="type">DB로부터</span> 데이터 <span class="call">받기</span>(dict type)
-        #  - 단건: <span class="call">fetchone</span>()
-        #  - 복수건: <span class="call">fetchall</span>()
-        result = curs.<span class="call">fetchone</span>()
-        <span class="keyword">return</span> result
-    except <span class="type">Exception</span> <span class="keyword">as</span> e:
-        <span class="call">print</span>(e)
+              """
+        curs.execute(sql)
+        # INSERT, DELETE, UPDATE → 동작(Check)
+        # SELECT → DB로부터 데이터 받기(dict type)
+        #  - 단건: fetchone()
+        #  - 복수건: fetchall()
+        result = curs.fetchone()
+        return result
+    except Exception as e:
+        print(e)
     finally:
-        conn.<span class="call">close</span>()
+        conn.close()
 
 
-def <span class="call">get_reviews</span>():
-    conn = <span class="call">connection</span>()
+def get_reviews():
+    conn = connection()
 
     try:
-        curs = conn.<span class="call">cursor</span>()
-        sql = <span class="string">"""
+        curs = conn.cursor()
+        sql = """
                 SELECT * FROM tbl_review
-              """</span>
-        curs.<span class="call">execute</span>(sql)
-        <span class="keyword">return</span> curs.<span class="call">fetchall</span>()
-    except <span class="type">Exception</span> <span class="keyword">as</span> e:
-        <span class="call">print</span>(e)
+              """
+        curs.execute(sql)
+        return curs.fetchall()
+    except Exception as e:
+        print(e)
     finally:
-        conn.<span class="call">close</span>()<span class="call">e</span>()
+        conn.close()e()
 </code></pre></div><span>Tagged with: </span><ul class="tag-list"><li><a href="/tags/deploy" class="deploy-tag">deploy</a></li><li><a href="/tags/xcode" class="xcode-tag">xcode</a></li><li><a href="/tags/swift" class="swift-tag">swift</a></li></ul></article></div><footer><p>Copyright © Minjae. All Rights Reserved.
  Built in Swift using <a href="https://github.com/johnsundell/publish">Publish</a></p><p><a href="/feed.rss">RSS feed</a></p></footer></body></html>
