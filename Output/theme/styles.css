@@ -142,7 +142,7 @@
 }
 
 body {
-    background-color: black;
+    background-color: #222;
     color: #000;
     font-family: Helvetica, Arial;
     text-align: center;
@@ -287,7 +287,7 @@ a {
     color: inherit;
 }
 .item-list {
-    background-color: black;
+    background-color: #222;
 }
 
 .item-list h1 a:hover {
@@ -332,6 +332,14 @@ a {
 .item-list p {
     margin-bottom: 15;
     line-height: 1.6;
+}
+.item-page .tag-list {
+    display: inline-block;
+}
+
+.article-metadata {
+    display: inline-grid;
+    grid-template-columns: auto auto;
 }
 
 .tag-list li,
@@ -398,20 +406,17 @@ footer {
     color: #8a8a8a;
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: black;
-    }
+body {
+    background-color: #222;
+}
 
-    body,
-    header .site-name {
-        color: #ddd;
-    }
+body,
+header .site-name {
+    color: #ddd;
+}
 
-    .item-list > li {
-        background-color: #333;
-    }
-
+.item-list > li {
+    background-color: #333;
 }
 
 @media(max-width: 600px) {

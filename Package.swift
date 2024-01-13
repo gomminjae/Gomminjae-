@@ -28,7 +28,6 @@ let package = Package(
                 "Publish",
                 "SplashPublishPlugin",
                 "HighlightJSPublishPlugin"
-                
             ]
         )
     ]

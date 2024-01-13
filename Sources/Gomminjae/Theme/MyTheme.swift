@@ -80,12 +80,19 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
                     SiteHeader(context: context, selectedSelectionID: item.sectionID)
                     Wrapper {
                         Article {
+                            Div {
+                                ItemTagList(item: item, site: context.site)
+                                Paragraph(item.date.toString())
+                                    .class("item-metadata")
+                            }
+                            .class("article-metadata")
                             Div(item.content.body).class("content")
-                            Span("Tagged with: ")
-                            ItemTagList(item: item, site: context.site)
+                            
                         }
                     }
                     SiteFooter()
+                    
+                    
                 }
             )
         )
