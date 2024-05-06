@@ -11,13 +11,14 @@ let package = Package(
             name: "Gomminjae",
             targets: ["Gomminjae"]
         )
+
     ],
+
     dependencies: [
-        
         .package(name: "Publish", url: "https://github.com/johnsundell/publish.git", from: "0.8.0"),
         .package(name: "SplashPublishPlugin", url: "https://github.com/johnsundell/splashpublishplugin", from: "0.1.0"),
-        .package(name: "HighlightJSPublishPlugin", url: "https://github.com/alex-ross/highlightjspublishplugin", from: "1.0.0")
-
+        .package(name: "highlightjspublishplugin", url: "https://github.com/alex-ross/highlightjspublishplugin", from: "1.0.2"),
+       
         
        
     ],
@@ -27,12 +28,9 @@ let package = Package(
             dependencies: [
                 "Publish",
                 "SplashPublishPlugin",
-                "HighlightJSPublishPlugin"
+                .product(name: "HighlightJSPublishPlugin", package: "highlightjspublishplugin"),
             ]
         )
+        
     ]
-    
-    
-    
-    
 )

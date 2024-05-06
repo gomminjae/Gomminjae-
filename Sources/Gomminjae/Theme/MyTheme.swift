@@ -33,9 +33,6 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
             .body {
                 SiteHeader(context: context, selectedSelectionID: nil)
                 Wrapper {
-//                    H1(index.title)
-//                    Paragraph(context.site.description)
-//                        .class("description")
                     H1("Recent Posts")
                     ItemList(
                         items: context.allItems(
@@ -192,7 +189,7 @@ private struct SiteHeader<Site: Website>: Component {
 //                Link(context.site.name, url: "/")
 //                    .class("site-name")
                 
-                Banner(title: "Gomminjae", subTitle: "메끼끼", bannerImage: "/images/logo.png")
+                Banner(title: "공부하자", subTitle: "몰입", bannerImage: "/images/logo.png")
                 
                 
                 if Site.SectionID.allCases.count > 1 {

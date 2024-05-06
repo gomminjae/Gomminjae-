@@ -32,7 +32,6 @@ struct Gomminjae: Website {
 
     //웹사이트 메타데이터 
     struct ItemMetadata: WebsiteItemMetadata {
-        // Add any site-specific metadata that you want to use here.
         var date: Date
         var description: String
         var tags: Tag
