@@ -7,7 +7,7 @@ tags: deploy,xcode,swift
 
 My first post's text.
 
-```
+```swift
 private struct ItemTagList<Site: Website>: Component {
     var item: Item<Site>
     var site: Site
@@ -30,13 +30,13 @@ private struct ItemTagList<Site: Website>: Component {
 
 
 # C 
-``` C
+```c
 printf("Hello world !\n");
 printf("code Block \n");
 ```
 
 # Python 
-``` python
+```python
 from db.connection import connection
 
 
