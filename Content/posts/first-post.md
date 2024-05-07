@@ -101,7 +101,7 @@ def get_reviews():
     except Exception as e:
         print(e)
     finally:
-        conn.close()e()
+        conn.close()
 ```
 
 
