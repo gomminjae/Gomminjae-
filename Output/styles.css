@@ -1,207 +1,168 @@
 /**
  * MARK: Highlight JS
  */
-
-/*
-
- Atom One Light by Daniel Gamage
- Original One Light Syntax theme from https://github.com/atom/one-light-syntax
-
- base:    #fafafa
- mono-1:  #383a42
- mono-2:  #686b77
- mono-3:  #a0a1a7
- hue-1:   #0184bb
- hue-2:   #4078f2
- hue-3:   #a626a4
- hue-4:   #50a14f
- hue-5:   #e45649
- hue-5-2: #c91243
- hue-6:   #986801
- hue-6-2: #c18401
-
- */
-
+/**/
+/*.hljs {*/
+/*    display: block;*/
+/*    overflow-x: auto;*/
+/*    padding: 0.5em;*/
+/*    background: #282c34;*/
+/*    border-radius: 20px;*/
+/*    padding: 15px 20px;*/
+/*    border-color: 1px solid rgba(214, 214, 214, 0.2);*/
+/*}*/
+/**/
+/*.hljs-comment,*/
+/*.hljs-quote {*/
+/*    color: #7e8c98;*/
+/*    font-style: italic;*/
+/*}*/
+/**/
+/*.hljs-doctag,*/
+/*.hljs-keyword,*/
+/*.hljs-formula {*/
+/*    color: #ff7ab2;*/
+/*}*/
+/**/
+/*.hljs-section,*/
+/*.hljs-name,*/
+/*.hljs-selector-tag,*/
+/*.hljs-deletion,*/
+/*.hljs-subst {*/
+/*    color: #78c2b4;*/
+/*}*/
+/**/
+/*.hljs-literal {*/
+/*    color: #56b6c2;*/
+/*}*/
+/**/
+/*.hljs-string,*/
+/*.hljs-regexp,*/
+/*.hljs-addition,*/
+/*.hljs-attribute,*/
+/*.hljs-meta-string {*/
+/*    color: #ff8170;*/
+/*}*/
+/**/
+/*.hljs-built_in,*/
+/*.hljs-class .hljs-title {*/
+/*    color: #78c2b4;*/
+/*}*/
+/**/
+/*.hljs-attr,*/
+/*.hljs-variable,*/
+/*.hljs-template-variable,*/
+/*.hljs-type,*/
+/*.hljs-selector-class,*/
+/*.hljs-selector-attr,*/
+/*.hljs-selector-pseudo,*/
+/*.hljs-number {*/
+/*    color: #b283ec;*/
+/*}*/
+/**/
+/*.hljs-symbol,*/
+/*.hljs-bullet,*/
+/*.hljs-link,*/
+/*.hljs-meta,*/
+/*.hljs-selector-id,*/
+/*.hljs-title {*/
+/*    color: white;*/
+/*}*/
+/**/
+/*.hljs-emphasis {*/
+/*    font-style: italic;*/
+/*}*/
+/**/
+/*.hljs-strong {*/
+/*    font-weight: bold;*/
+/*}*/
+/**/
+/*.hljs-link {*/
+/*    text-decoration: underline;*/
+/*}*/
+/*}*/
 .hljs {
     display: block;
     overflow-x: auto;
     padding: 0.5em;
-    color: #383a42;
-    background: #fafafa;
-    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
     padding: 15px 20px;
 }
 
-.hljs-comment,
-.hljs-quote {
-    color: #a0a1a7;
-    font-style: italic;
-}
-
-.hljs-doctag,
-.hljs-keyword,
-.hljs-formula {
-    color: #a626a4;
-}
-
-.hljs-section,
-.hljs-name,
+.hljs-built_in,
 .hljs-selector-tag,
-.hljs-deletion,
-.hljs-subst {
-    color: #e45649;
+.hljs-section,
+.hljs-link {
+  color: #8be9fd;
 }
 
-.hljs-literal {
-    color: #0184bb;
+.hljs-keyword {
+  color: #ff79c6;
+}
+
+.hljs,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-title,
+.hljs-attr,
+.hljs-meta-keyword {
+  font-style: italic;
+  color: #50fa7b;
 }
 
 .hljs-string,
-.hljs-regexp,
-.hljs-addition,
-.hljs-attribute,
-.hljs-meta-string {
-    color: #50a14f;
-}
-
-.hljs-built_in,
-.hljs-class .hljs-title {
-    color: #c18401;
-}
-
-.hljs-attr,
-.hljs-variable,
-.hljs-template-variable,
+.hljs-meta,
+.hljs-name,
 .hljs-type,
-.hljs-selector-class,
-.hljs-selector-attr,
-.hljs-selector-pseudo,
-.hljs-number {
-    color: #986801;
-}
-
 .hljs-symbol,
 .hljs-bullet,
-.hljs-link,
-.hljs-meta,
-.hljs-selector-id,
-.hljs-title {
-    color: #4078f2;
+.hljs-addition,
+.hljs-variable,
+.hljs-template-tag,
+.hljs-template-variable {
+  color: #f1fa8c;
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion {
+  color: #6272a4;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-title,
+.hljs-section,
+.hljs-doctag,
+.hljs-type,
+.hljs-name,
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-literal,
+.hljs-number {
+  color: #bd93f9;
 }
 
 .hljs-emphasis {
-    font-style: italic;
+  font-style: italic;
 }
 
-.hljs-strong {
-    font-weight: bold;
+
+li::marker {
+/*    unicode-bidi: isolate;*/
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
 }
-
-.hljs-link {
-    text-decoration: underline;
+li {
+    text-indent: 0 !important;
+    margin-left: 0 !important;
 }
-
-@media (prefers-color-scheme: dark) {
-    /*
-
-     Atom One Dark by Daniel Gamage
-     Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
-
-     base:    #282c34
-     mono-1:  #abb2bf
-     mono-2:  #818896
-     mono-3:  #5c6370
-     hue-1:   #56b6c2
-     hue-2:   #61aeee
-     hue-3:   #c678dd
-     hue-4:   #98c379
-     hue-5:   #e06c75
-     hue-5-2: #be5046
-     hue-6:   #d19a66
-     hue-6-2: #e6c07b
-
-     */
-
-    .hljs {
-        display: block;
-        overflow-x: auto;
-        padding: 0.5em;
-        color: #abb2bf;
-        background: #282c34;
-        border-radius: 20px;
-        padding: 15px 20px;
-    }
-
-    .hljs-comment,
-    .hljs-quote {
-        color: #5c6370;
-        font-style: italic;
-    }
-
-    .hljs-doctag,
-    .hljs-keyword,
-    .hljs-formula {
-        color: #c678dd;
-    }
-
-    .hljs-section,
-    .hljs-name,
-    .hljs-selector-tag,
-    .hljs-deletion,
-    .hljs-subst {
-        color: #e06c75;
-    }
-
-    .hljs-literal {
-        color: #56b6c2;
-    }
-
-    .hljs-string,
-    .hljs-regexp,
-    .hljs-addition,
-    .hljs-attribute,
-    .hljs-meta-string {
-        color: #98c379;
-    }
-
-    .hljs-built_in,
-    .hljs-class .hljs-title {
-        color: #e6c07b;
-    }
-
-    .hljs-attr,
-    .hljs-variable,
-    .hljs-template-variable,
-    .hljs-type,
-    .hljs-selector-class,
-    .hljs-selector-attr,
-    .hljs-selector-pseudo,
-    .hljs-number {
-        color: #d19a66;
-    }
-
-    .hljs-symbol,
-    .hljs-bullet,
-    .hljs-link,
-    .hljs-meta,
-    .hljs-selector-id,
-    .hljs-title {
-        color: #61aeee;
-    }
-
-    .hljs-emphasis {
-        font-style: italic;
-    }
-
-    .hljs-strong {
-        font-weight: bold;
-    }
-
-    .hljs-link {
-        text-decoration: underline;
-    }
-}
-
 
 
 * {
@@ -226,7 +187,7 @@ body {
 }
 
 header {
-    background-image: linear-gradient(#0E141B, #1C262E);
+    background-color: #141414;
     
 }
 
@@ -242,7 +203,7 @@ header a {
 
 header .site-name {
     font-size: 1.5em;
-/*    color: #000;*/
+    /*    color: #000;*/
     font-weight: bold;
 }
 
@@ -257,35 +218,35 @@ header .banner-image {
     max-width: 80%;
 }
 .banner-title {
-  font-size: 50px;
+    font-size: 50px;
 }
 
 @media(max-width: 560px) {
-  .banner-title {
-    font-size: 30px;
-  }
+    .banner-title {
+        font-size: 30px;
+    }
 }
 
 @media(max-width: 400px) {
-  .banner-title {
-    font-size: 25px;
-  }
+    .banner-title {
+        font-size: 25px;
+    }
 }
 
 .banner-subtitle {
-  font-size: 25px;
+    font-size: 25px;
 }
 
 @media(max-width: 550px) {
-  .banner-subtitle {
-    font-size: 20px;
-  }
+    .banner-subtitle {
+        font-size: 20px;
+    }
 }
 
 @media(max-width: 400px) {
-  .banner-subtitle {
-    font-size: 16px;
-  }
+    .banner-subtitle {
+        font-size: 16px;
+    }
 }
 
 p {
@@ -313,9 +274,9 @@ nav a:hover {
 }
 
 nav li a {
-/*    display: inline-block;*/
-/*    margin: 0 7px;*/
-/*    line-height: 1.5em;*/
+    /*    display: inline-block;*/
+    /*    margin: 0 7px;*/
+    /*    line-height: 1.5em;*/
     display: inline-block;
     text-align: center;
     padding: 10px;
@@ -327,7 +288,7 @@ nav li a {
 nav li a.selected {
     background-color: #237563;
     color: white;
-/*    text-decoration: underline;*/
+    /*    text-decoration: underline;*/
 }
 
 
@@ -354,7 +315,7 @@ a {
     color: inherit;
 }
 .item-list {
-    background-color: #222;
+
 }
 
 .item-list h1 a:hover {
@@ -362,7 +323,7 @@ a {
 }
 
 .item-metadata {
-  color: #6C7693;
+    color: #6C7693;
 }
 
 .small-divider {
@@ -411,44 +372,44 @@ a {
 
 .tag-list li,
 .tag {
-  display: inline-block;
-  margin-right: 5px;
-  margin-bottom: 10px;
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 10px;
 }
 
 .tag-list a,
 .tag a,
 .tag {
-  text-decoration: none;
-  padding: 4px;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 6px;
-  font-weight: 300;
-  color: #FFF;
+    text-decoration: none;
+    padding: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 6px;
+    font-weight: 300;
+    color: #FFF;
 }
 
 .tag-list li:last-child {
-  margin-right: 20px;
+    margin-right: 20px;
 }
 
 .item-page .tag-list {
-  display: inline-block;
+    display: inline-block;
 }
 
 .content {
-  margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .browse-all {
-  display: block;
-  margin-bottom: 30px;
+    display: block;
+    margin-bottom: 30px;
 }
 
 .all-tags ul {
-  font-size: 22px;
-  margin-right: 10px;
-  padding: 6px 10px;
+    font-size: 22px;
+    margin-right: 10px;
+    padding: 6px 10px;
 }
 .item-page .tag-list {
     display: inline-block;
@@ -474,7 +435,7 @@ footer {
 }
 
 body {
-    background-color: #222;
+    background-color: black;
 }
 
 body,
@@ -483,7 +444,7 @@ header .site-name {
 }
 
 .item-list > li {
-    background-color: #333;
+    background-color: #141414;
 }
 
 @media(max-width: 600px) {

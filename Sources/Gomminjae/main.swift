@@ -12,7 +12,6 @@ import HighlightJSPublishPlugin
 try Gomminjae()
     .publish(using: [
         .installPlugin(.highlightJS()),
-        //.installPlugin(.splash(withClassPrefix: "")),
         .addMarkdownFiles(),
         .copyResources(),
         .generateHTML(withTheme: .myTheme),
@@ -20,5 +19,6 @@ try Gomminjae()
         .deploy(using: .gitHub("gomminjae/gomminjae.github.io",
                                branch: "main",
                                useSSH: false)
+                
         )
     ])

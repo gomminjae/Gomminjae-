@@ -7,24 +7,23 @@ tags: deploy,xcode,swift
 
 My first post's text.
 
-```swift
-private struct ItemTagList<Site: Website>: Component {
-    var item: Item<Site>
-    var site: Site
+```Swift
+extension DateFormatter {
+    static var time: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.dateFormat = "yyyy년 MM월 dd일"
+        return formatter
+    }()
+}
 
-    var body: Component {
-        List(item.tags) { tag in
-            Link(tag.string, url: site.path(for: tag).absoluteString)
-                .class(tagClass(for: tag))
-        }
-        .class("tag-list")
-    }
-    
-    private func tagClass(for tag: Tag) -> String {
-        var tagString = tag.string
-        return "\(tagString)-tag"
+extension Date {
+    func toString() -> String {
+        let dateFormatter = DateFormatter.time
+        return dateFormatter.string(from: self)
     }
 }
+
 ```
 
 
