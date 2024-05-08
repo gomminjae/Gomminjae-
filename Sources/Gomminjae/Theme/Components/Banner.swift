@@ -18,12 +18,6 @@ struct Banner: Component {
     
     var body: Component {
         Div {
-            
-            
-//            Link(url: "/") {
-//                Image(url: bannerImage, description: "배너이미지")
-//                .class("banner-image")
-//            }
             Paragraph {
                 Text(title)
                     
