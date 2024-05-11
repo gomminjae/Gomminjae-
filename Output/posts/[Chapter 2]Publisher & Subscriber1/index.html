@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta property="og:site_name" content="Gomminjae"/><link rel="canonical" href="https://gomminjae/gomminjae.github.io/posts/%5BChapter%202%5DPublisher%20&%20Subscriber1"/><meta name="twitter:url" content="https://gomminjae/gomminjae.github.io/posts/%5BChapter%202%5DPublisher%20&%20Subscriber1"/><meta property="og:url" content="https://gomminjae/gomminjae.github.io/posts/%5BChapter%202%5DPublisher%20&%20Subscriber1"/><title>[Chapter 2]Publisher &amp; Subscriber - 3 | Gomminjae</title><meta name="twitter:title" content="[Chapter 2]Publisher &amp; Subscriber - 3 | Gomminjae"/><meta property="og:title" content="[Chapter 2]Publisher &amp; Subscriber - 3 | Gomminjae"/><meta name="description" content="Let's combine"/><meta name="twitter:description" content="Let's combine"/><meta property="og:description" content="Let's combine"/><meta name="twitter:card" content="summary"/><link rel="stylesheet" href="/styles.css" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/images/favicon.png" type="image/png"/><link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to Gomminjae"/></head><body class="item-page"><header><div class="wrapper"><div><p class="banner-title">Gomminjae</p><p class="banner-subtitle">test</p></div><nav><ul><li><a href="/posts" class="selected">Posts</a></li><li><a href="/portfolio">Portfolio</a></li><li><a href="/about">About</a></li></ul></nav></div></header><div class="wrapper"><article><div class="article-metadata"><ul class="tag-list"><li><a href="/tags/swift" class="swift-tag">swift</a></li><li><a href="/tags/combine" class="combine-tag">combine</a></li></ul><p class="item-metadata">2024년 05월 07일</p></div><div class="content"><h1>[Chapter 2]Publisher &amp; Subscriber - 3</h1><h2>Cancellable</h2><p><code>subscriber</code>가 완료되고 더 이상 <code>publisher</code>로 부터 값을 받고싶지 않은 경우 <code>subscription을 취소</code>하여 리소스를 확보하고 네트워크 호출과 같은 해당 활동의 발생을 중지하는 것이 좋습니다.</p><p><code>subscription</code>은 <code>AnyCancellable 토큰</code>을 반환하므로 구독이 끝나면 구독을 취소할 수 있습니다. 이 방법은 <code>AnyCancellable protocol</code>을 준수합니다.</p><h2>Understanding what’s going on</h2><img src="/images/publisher.png" alt="publisher 예제"/><ul><li>Subscriber은 publisher를 구독합니다.</li><li>publisher은 구독을 생성하여 subscriber에게 제공합니다</li><li>subscriber가 값을 요청합니다.</li><li>publisher은 값을 보냅니다</li><li>publisher가 completion을 보냅니다</li></ul><p>publisher 프로토콜을 먼저 살펴보겠습니다</p><pre data-language="swift" class="hljs"><code><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">protocol</span> <span class="hljs-title">Publisher</span> </span>{
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta property="og:site_name" content="Gomminjae"/><link rel="canonical" href="https://gomminjae/gomminjae.github.io/posts/%5BChapter%202%5DPublisher%20&%20Subscriber1"/><meta name="twitter:url" content="https://gomminjae/gomminjae.github.io/posts/%5BChapter%202%5DPublisher%20&%20Subscriber1"/><meta property="og:url" content="https://gomminjae/gomminjae.github.io/posts/%5BChapter%202%5DPublisher%20&%20Subscriber1"/><title>[Chapter 2]Publisher &amp; Subscriber - 3 | Gomminjae</title><meta name="twitter:title" content="[Chapter 2]Publisher &amp; Subscriber - 3 | Gomminjae"/><meta property="og:title" content="[Chapter 2]Publisher &amp; Subscriber - 3 | Gomminjae"/><meta name="description" content="Let's combine"/><meta name="twitter:description" content="Let's combine"/><meta property="og:description" content="Let's combine"/><meta name="twitter:card" content="summary"/><link rel="stylesheet" href="/styles.css" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/images/favicon.png" type="image/png"/><link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to Gomminjae"/></head><body class="item-page"><header><div class="wrapper"><div><p class="banner-title">Gomminjae</p><p class="banner-subtitle">test</p></div><nav><ul><li><a href="/posts" class="selected">Posts</a></li><li><a href="/portfolio">Portfolio</a></li><li><a href="/about">About</a></li></ul></nav></div></header><div class="wrapper"><article><div class="article-metadata"><ul class="tag-list"><li><a href="/tags/swift" class="swift-tag">swift</a></li><li><a href="/tags/combine" class="combine-tag">combine</a></li></ul><p class="item-metadata">2024년 05월 05일</p></div><div class="content"><h1>[Chapter 2]Publisher &amp; Subscriber - 3</h1><h2>Cancellable</h2><p><code>subscriber</code>가 완료되고 더 이상 <code>publisher</code>로 부터 값을 받고싶지 않은 경우 <code>subscription을 취소</code>하여 리소스를 확보하고 네트워크 호출과 같은 해당 활동의 발생을 중지하는 것이 좋습니다.</p><p><code>subscription</code>은 <code>AnyCancellable 토큰</code>을 반환하므로 구독이 끝나면 구독을 취소할 수 있습니다. 이 방법은 <code>AnyCancellable protocol</code>을 준수합니다.</p><h2>Understanding what’s going on</h2><img src="/images/publisher.png" alt="publisher 예제"/><ul><li>Subscriber은 publisher를 구독합니다.</li><li>publisher은 구독을 생성하여 subscriber에게 제공합니다</li><li>subscriber가 값을 요청합니다.</li><li>publisher은 값을 보냅니다</li><li>publisher가 completion을 보냅니다</li></ul><p>publisher 프로토콜을 먼저 살펴보겠습니다</p><pre data-language="swift" class="hljs"><code><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">protocol</span> <span class="hljs-title">Publisher</span> </span>{
   <span class="hljs-comment">// 1</span>
   <span class="hljs-keyword">associatedtype</span> <span class="hljs-type">Output</span>
 
@@ -78,15 +78,16 @@ publisher.subscribe(subscriber)
   <span class="hljs-built_in">print</span>(<span class="hljs-string">"Received value"</span>, input)
   <span class="hljs-keyword">return</span> .unlimited
 }
-<span class="hljs-comment">//echo</span>
-——— <span class="hljs-type">Example</span> of: <span class="hljs-type">Custom</span> <span class="hljs-type">Subscriber</span> ———
-<span class="hljs-type">Received</span> value <span class="hljs-number">1</span>
-<span class="hljs-type">Received</span> value <span class="hljs-number">2</span>
-<span class="hljs-type">Received</span> value <span class="hljs-number">3</span>
-<span class="hljs-type">Received</span> value <span class="hljs-number">4</span>
-<span class="hljs-type">Received</span> value <span class="hljs-number">5</span>
-<span class="hljs-type">Received</span> value <span class="hljs-number">6</span>
-<span class="hljs-type">Received</span> completion finished
+</code></pre><pre data-language="undefined" class="hljs"><code>
+//echo
+——— Example of: Custom Subscriber ———
+Received value 1
+Received value 2
+Received value 3
+Received value 4
+Received value 5
+Received value 6
+Received completion finished
 </code></pre><p>이렇듯 <code>.unlimited</code>로 제한을 두지않았더니 모든 데이터가 출력되고 완료메세지가 출력되는것을 확인할 수 있습니다.</p><h2>Hello Future</h2><p><code>Future</code>은 <code>Just</code>와 마찬가지로 단일값을 publish하는 <code>publisher</code>입니다. <code>Future</code>은 실패하거나 단일 값을 방출한 후 완료됩니다. 그러면 J<code>ust와 차이점은 무엇인가?</code> 바로 동기적이냐 비동기적이냐의 차이입니다.Just는 단순히 동기적으로 단일값을 방출하고 완료합니다 이것은 단일값을 즉시 처리하고자 할때 사용됩니다. 그러나 Future은 비동기적으로 작동합니다. 클로저를 통해 작업이 완료되면 값을 발행하고 완료됩니다. 작업이 완료되면 <code>.success(value)</code>를 통해 값을 내보내거나 실패시 <code>.failure</code>를 통해 에러를 내보낼 수 있습니다..</p><p>예시로 보겠습니다.</p><pre data-language="swift" class="hljs"><code>example(of: <span class="hljs-string">"Future"</span>) {
     <span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">futureIncrement</span><span class="hljs-params">(
         integer: Int,
@@ -133,11 +134,12 @@ finished
             receiveValue: { <span class="hljs-built_in">print</span>(<span class="hljs-string">"Second"</span>, $<span class="hljs-number">0</span>) })
       .store(<span class="hljs-keyword">in</span>: &amp;subscription)
 }
-</code></pre><p>future 구독 수를 한개 더 늘렸습니다. 또한 Disapqtch queue실행전에 Original을 출력하도록 변경하였습니다. 결과를 확인하면</p><pre data-language="swift" class="hljs"><code>——— <span class="hljs-type">Example</span> of: <span class="hljs-type">Future</span> ———
-<span class="hljs-type">Original</span>
-<span class="hljs-number">2</span>
+</code></pre><p>future 구독 수를 한개 더 늘렸습니다. 또한 Disapqtch queue실행전에 Original을 출력하도록 변경하였습니다. 결과를 확인하면</p><pre data-language="undefined" class="hljs"><code>
+——— Example of: Future ———
+Original
+2
 finished
-<span class="hljs-type">Second</span> <span class="hljs-number">2</span>
-<span class="hljs-type">Second</span> finished
+Second 2
+Second finished
 </code></pre><p>이렇듯 Future은 값을 무한정 비동기적으로 게시할 수 있습니다.</p><p>##</p></div></article></div><footer><p>Copyright © Minjae. All Rights Reserved.
  Built in Swift using <a href="https://github.com/johnsundell/publish">Publish</a></p><p><a href="/feed.rss">RSS feed</a></p></footer></body></html>

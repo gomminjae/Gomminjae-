@@ -7,8 +7,7 @@
     <span class="hljs-built_in">print</span>(<span class="hljs-string">"\n --- Example of: "</span>, desription, <span class="hljs-string">"---"</span>)
     action()
 }
-
-example(of: <span class="hljs-string">"Publisher"</span>) {
+</code></pre><pre data-language="swift" class="hljs"><code>example(of: <span class="hljs-string">"Publisher"</span>) {
     <span class="hljs-keyword">let</span> myNotification = <span class="hljs-type">Notification</span>.<span class="hljs-type">Name</span>(<span class="hljs-string">"MyNotification"</span>)
     
     <span class="hljs-keyword">let</span> publisher = <span class="hljs-type">NotificationCenter</span>.<span class="hljs-keyword">default</span>
@@ -36,8 +35,9 @@ example(of: <span class="hljs-string">"Publisher"</span>) {
     center.removeObserver(observer)
     
 }
-</code></pre><p>이 코드는 다음과 같습니다</p><ol><li>기본 알림 센터에 대한 핸들을 가져옵니다</li><li>이전에 만든 이름으로 알림을 수신할 observer를 만듭니다.</li><li>알림을 게시</li><li>observer를 제거합니다</li></ol><p>결과는 다음과 같습니다</p><pre data-language="swift" class="hljs"><code>——— <span class="hljs-type">Example</span> of: <span class="hljs-type">Publisher</span> ———
-<span class="hljs-type">Notification</span> received!
+</code></pre><p>이 코드는 다음과 같습니다</p><ol><li>기본 알림 센터에 대한 핸들을 가져옵니다</li><li>이전에 만든 이름으로 알림을 수신할 observer를 만듭니다.</li><li>알림을 게시</li><li>observer를 제거합니다</li></ol><p>결과는 다음과 같습니다</p><pre data-language="undefined" class="hljs"><code>
+——— Example of: Publisher ———
+Notification received!
 </code></pre><p>이 예제는 실제로 <code>publisher</code>에서 나오는것이 아니기 때문에 이 <code>publiser</code>를 구독할 <code>subscribe</code>를 만들어보겠습니다.</p><h1>Subscriber</h1><blockquote><p><code>Subscriber</code>는 <code>publisher</code>로부터 입력을 받을 수 있는 유형에 대한 요구사항을 정의하는 <strong>protocol 입니다</strong>.</p></blockquote><h2>예제</h2><pre data-language="swift" class="hljs"><code>example(of: <span class="hljs-string">"Subscriber"</span>) {
     <span class="hljs-keyword">let</span> myNotification = <span class="hljs-type">Notification</span>.<span class="hljs-type">Name</span>(<span class="hljs-string">"MyNotification"</span>)
     <span class="hljs-keyword">let</span> publisher = <span class="hljs-type">NotificationCenter</span>.<span class="hljs-keyword">default</span>
@@ -58,8 +58,9 @@ example(of: <span class="hljs-string">"Publisher"</span>) {
 		<span class="hljs-comment">// 3</span>
     subscription.cancel()
 }
-</code></pre><ol><li>sink를 호출하여 subscription을 생성합니다</li><li>notification을 보냅니다</li><li>subscription을 취소합니다.</li></ol><pre data-language="swift" class="hljs"><code>——— <span class="hljs-type">Example</span> of: <span class="hljs-type">Publisher</span> ———
-<span class="hljs-type">Notification</span> received from a publisher!
+</code></pre><ol><li>sink를 호출하여 subscription을 생성합니다</li><li>notification을 보냅니다</li><li>subscription을 취소합니다.</li></ol><pre data-language="undefined" class="hljs"><code>
+——— Example of: Publisher ———
+Notification received from a publisher!
 </code></pre><p>다음과 같이 출력되는것을 볼 수 있습니다. sink는 publisher가 내보낸 만큼의 값을 계속해서 받습니다. 이것을 <em>unlimited demand(무제한 수요)</em>라고 부릅니다.</p><img src="/images/sink.png" alt="sink"/><p>사진과 같이 sink연산자는 실제로 2개의 클로저를 제공합니다. 예제에서는 사용하지 않았지만 이 클로저들은 하나는 완료 이벤트 수신을 처리하고 다른 하나는 값 수신을 처리합니다. 이것들을 보기위해 예제를 추가하겠습니다</p><h1>sink 클로저 예제</h1><pre data-language="swift" class="hljs"><code>example(of: <span class="hljs-string">"Just"</span>) {
   <span class="hljs-comment">// 1</span>
   <span class="hljs-keyword">let</span> just = <span class="hljs-type">Just</span>(<span class="hljs-string">"Hello world!"</span>)
@@ -74,9 +75,10 @@ example(of: <span class="hljs-string">"Publisher"</span>) {
         <span class="hljs-built_in">print</span>(<span class="hljs-string">"Received value"</span>, $<span class="hljs-number">0</span>)
     })
 }
-</code></pre><ol><li>Just를 이용하여 publisher를 생성합니다. 이것은 single value단위의 publisher입니다.</li><li>subscription을 만들어 수신된 각 이벤트에 대한 메시지를 출력합니다.</li></ol><p>다음과 같이 출력됩니다. 수신값을 먼저 출력하고 그 다음 완료 이벤트를 출력하는것을 볼 수 있습니다.</p><pre data-language="swift" class="hljs"><code>——— <span class="hljs-type">Example</span> of: <span class="hljs-type">Just</span> ———
-<span class="hljs-type">Received</span> value <span class="hljs-type">Hello</span> world!
-<span class="hljs-type">Received</span> completion finished
+</code></pre><ol><li>Just를 이용하여 publisher를 생성합니다. 이것은 single value단위의 publisher입니다.</li><li>subscription을 만들어 수신된 각 이벤트에 대한 메시지를 출력합니다.</li></ol><p>다음과 같이 출력됩니다. 수신값을 먼저 출력하고 그 다음 완료 이벤트를 출력하는것을 볼 수 있습니다.</p><pre data-language="undefined" class="hljs"><code>
+——— Example of: Just ———
+Received value Hello world!
+Received completion finished
 </code></pre><p>구독자를 추가해보겠습니다.</p><pre data-language="swift" class="hljs"><code>example(of: <span class="hljs-string">"Just"</span>) {
   <span class="hljs-comment">// 1</span>
   <span class="hljs-keyword">let</span> just = <span class="hljs-type">Just</span>(<span class="hljs-string">"Hello world!"</span>)
@@ -100,10 +102,11 @@ example(of: <span class="hljs-string">"Publisher"</span>) {
       <span class="hljs-built_in">print</span>(<span class="hljs-string">"Received value (another)"</span>, $<span class="hljs-number">0</span>)
   })
 }
-</code></pre><pre data-language="swift" class="hljs"><code>--- <span class="hljs-type">Example</span> of:  <span class="hljs-type">Just</span> ---
-<span class="hljs-type">Received</span> value <span class="hljs-type">Hello</span> world!
-<span class="hljs-type">Received</span> completion finished
-<span class="hljs-type">Received</span> value (another) <span class="hljs-type">Hello</span> world!
-<span class="hljs-type">Received</span> completion (another) finished
+</code></pre><pre data-language="undefined" class="hljs"><code>
+--- Example of:  Just ---
+Received value Hello world!
+Received completion finished
+Received value (another) Hello world!
+Received completion (another) finished
 </code></pre><p>다음과 같이 출력문이 생성됩니다. 두 구독자 모두에게 값이 전달된것을 확인할 수 있습니다.</p></div></article></div><footer><p>Copyright © Minjae. All Rights Reserved.
  Built in Swift using <a href="https://github.com/johnsundell/publish">Publish</a></p><p><a href="/feed.rss">RSS feed</a></p></footer></body></html>

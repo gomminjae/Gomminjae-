@@ -22,7 +22,8 @@ func example(of desription: String, action: () -> Void) {
     print("\n --- Example of: ", desription, "---")
     action()
 }
-
+```
+```swift
 example(of: "Publisher") {
     let myNotification = Notification.Name("MyNotification")
     
@@ -34,8 +35,8 @@ example(of: "Publisher") {
 
 이 코드에서는 
 
-1. Notification 이름을 생성합니다
-2. `NotificationCenter`의 기본 센터에 액세스하여 해당 `publisher(for:object:)`메서드를 호출하고 반환 값을 지역 상수에 할당합니다.
+  1. Notification 이름을 생성합니다
+  2. `NotificationCenter`의 기본 센터에 액세스하여 해당 `publisher(for:object:)`메서드를 호출하고 반환 값을 지역 상수에 할당합니다.
 
 ## publisher 메소드 확인
 
@@ -86,7 +87,7 @@ example(of: "Publisher") {
 
 결과는 다음과 같습니다 
 
-```swift
+```text
 ——— Example of: Publisher ———
 Notification received!
 ```
@@ -130,11 +131,11 @@ example(of: "Subscriber") {
 }
 ```
 
-1. sink를 호출하여 subscription을 생성합니다 
-2. notification을 보냅니다 
-3. subscription을 취소합니다. 
+    1. sink를 호출하여 subscription을 생성합니다 
+    2. notification을 보냅니다 
+    3. subscription을 취소합니다. 
 
-```swift
+```test
 ——— Example of: Publisher ———
 Notification received from a publisher!
 ```
@@ -169,7 +170,7 @@ example(of: "Just") {
 
 다음과 같이 출력됩니다. 수신값을 먼저 출력하고 그 다음 완료 이벤트를 출력하는것을 볼 수 있습니다.
 
-```swift
+```text
 ——— Example of: Just ———
 Received value Hello world!
 Received completion finished
@@ -203,7 +204,7 @@ example(of: "Just") {
 }
 ```
 
-```swift
+```text
 --- Example of:  Just ---
 Received value Hello world!
 Received completion finished

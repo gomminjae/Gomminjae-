@@ -31,7 +31,8 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
             .lang(context.site.language),
             .head(for: index, on: context.site),
             .body {
-                SiteHeader(context: context, selectedSelectionID: nil)
+//                SiteHeader(context: context, selectedSelectionID: nil)
+                HeaderComponent(context: context, selectedSelectionID: nil)
                 Wrapper {
                     H1("Recent Posts")
                     ItemList(
@@ -54,7 +55,7 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
             .lang(context.site.language),
             .head(for: section, on: context.site),
             .body {
-                SiteHeader(context: context, selectedSelectionID: section.id)
+                HeaderComponent(context: context, selectedSelectionID: section.id)
                 Wrapper {
                     H1(section.title)
                     ItemList(items: section.items, site: context.site)

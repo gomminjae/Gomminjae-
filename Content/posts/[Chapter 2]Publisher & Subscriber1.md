@@ -1,5 +1,5 @@
 ---
-date: 2024-05-07 15:04
+date: 2024-05-05 15:04
 description: Let's combine
 tags: swift,combine
 ---
@@ -120,9 +120,9 @@ example(of: "Custom Subscriber") {
 }
 ```
 
-1. (1..6)을 방출하는 `publisher`를 생성합니다 
-2. 새로운 `subscriber`인 `IntSubscriber`를 정의합니다. 
-3. Input타입을 설정해주고 에러는 Never로 에러가 일어나지 않다는것을 보장해줍니다. 
+ 1. (1..6)을 방출하는 `publisher`를 생성합니다 
+ 2. 새로운 `subscriber`인 `IntSubscriber`를 정의합니다. 
+ 3. Input타입을 설정해주고 에러는 Never로 에러가 일어나지 않다는것을 보장해줍니다. 
 4. `receive(subscription:)`를 구현합니다. 해당 함수는 `.request(.max(3))`을 이용하여 subscriber가 구독시 최대 3개의 값을 receive할 수 있다는 설정을 해줍니다. 
 5. 수신된 값을 출력하고 .none은 .max(0)과 같습니다. (더 이상 수신할 의사가 없음을 의미합니다) 
 6. 완료 이벤트를 출력합니다. 
@@ -150,6 +150,8 @@ func receive(_ input: Int) -> Subscribers.Demand {
   print("Received value", input)
   return .unlimited
 }
+```
+```text
 //echo
 ——— Example of: Custom Subscriber ———
 Received value 1
@@ -233,7 +235,7 @@ example(of: "Future") {
 
 future 구독 수를 한개 더 늘렸습니다. 또한 Disapqtch queue실행전에 Original을 출력하도록 변경하였습니다. 결과를 확인하면 
 
-```swift
+```text
 ——— Example of: Future ———
 Original
 2
