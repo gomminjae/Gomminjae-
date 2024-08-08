@@ -135,8 +135,8 @@ body {
 }
 
 header {
-    background-color: #141414;
-    padding: 20px;
+    background-color: rgb(42, 42, 42);
+/*    padding: 20px;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -145,7 +145,6 @@ header {
 
 .logo {
   font-size: 24px;
-  
 }
 
 header .wrapper {
@@ -235,15 +234,16 @@ nav a:hover {
 }
 
 nav li a {
-/*    display: inline-block;*/
-/*    text-align: center;*/
-    padding: 10px;
-/*    text-decoration: none;*/
+    /*    display: inline-block;*/
+    /*    text-align: center;*/
+    padding: .5em;
+    font-weight: normal;
     border-radius: 5px;
-color: #fff; /* Change this to your desired link color */
-  text-decoration: none;
-  margin-left: 20px;
-
+    color: #fff; /* Change this to your desired link color */
+    text-decoration: none;
+    margin-left: 20px;
+    display: inline-block;
+    
 }
 
 
@@ -420,8 +420,8 @@ header .site-name {
 img {
     overflow-clip-margin: content-box;
     overflow: clip;
-    width: 100%;
-    height: 100%;
+    width: 75%;
+    height: 75%;
     object-fit: cover;
 }
 
