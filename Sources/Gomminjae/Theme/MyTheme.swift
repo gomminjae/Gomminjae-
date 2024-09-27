@@ -31,7 +31,6 @@ struct MyHTMLFactory<Site: Website>: HTMLFactory {
             .lang(context.site.language),
             .head(for: index, on: context.site),
             .body {
-//                SiteHeader(context: context, selectedSelectionID: nil)
                 HeaderComponent(context: context, selectedSelectionID: nil)
                 Wrapper {
                     H1("Recent Posts")
@@ -182,22 +181,15 @@ private struct SiteHeader<Site: Website>: Component {
     var context: PublishingContext<Site>
     var selectedSelectionID: Site.SectionID?
     
-    
-
     var body: Component {
         Header {
             Wrapper {
-//                Link(context.site.name, url: "/")
-//                    .class("site-name")
-                
                 Banner(title: "Gomminjae", subTitle: "test", bannerImage: "/images/logo.png")
-                
                 
                 if Site.SectionID.allCases.count > 1 {
                     navigation
                 }
             }
-            //.class("header-background")
         }
     }
 
